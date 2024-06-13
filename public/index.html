@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CRUD Application</h1>
+
+    <div id="user-form">
+      <h2>Create User</h2>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <button onclick="createUser()" id="create-btn" disabled>Create</button>
+    </div>
+
+    <div id="edit-form" style="display: none">
+      <h2>Edit User</h2>
+      <input type="hidden" id="edit-id" />
+      <input type="text" id="edit-name" placeholder="Name" required />
+      <input type="email" id="edit-email" placeholder="Email" required />
+      <button onclick="editUser()">Save</button>
+      <button onclick="document.getElementById('edit-form').style.display='none'">Cancel</button>
+    </div>
+
+    <div id="user-list">
+      <h2>User List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
